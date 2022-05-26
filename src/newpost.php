@@ -4,6 +4,7 @@
 <head>
     <?php
     include "components/module-head.php";
+    require "../config.php";
     ?>
 
     <?php $pagename = basename(__FILE__); ?>
@@ -13,6 +14,11 @@
     <?php include "components/login-window.php"; ?>
 
     <?php if ($_SESSION['login'] === true) { ?>
+        <?php
+            $url = "https://quill.p3k.io/auth/start?me=$site_domain&client_id=https%3A%2F%2Fquill.p3k.io%2F&redirect_uri=https%3A%2F%2Fquill.p3k.io%2Fauth%2Fcallback";
+            header("Location: $url");
+        ?>
+
         <?php include "components/sidebar.php"; ?>
 
         <div class="w3-main module-content">
