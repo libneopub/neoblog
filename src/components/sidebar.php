@@ -22,7 +22,7 @@
         <div class="w3-col s8 w3-bar">
             <span>Welcome, <strong><?php echo $_SESSION['name']; ?></strong></span><br>
             <a href='../index.php'>&larr; Back</a> |
-            <a href="login.php?logout">Logout</a>
+            <a href="auth.php?logout">Logout</a>
         </div>
 
     </div>

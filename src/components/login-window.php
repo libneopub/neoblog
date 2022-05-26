@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -30,23 +29,16 @@ if($_SESSION['login'] == false) {
 
                     <h2>Sign in</h2>
 
-                    <form action="login.php" method="post">
-                        <input required class="inlogveld" type="text" name="name" id="name" /><br>
-                        <input required class="inlogveld" type="password" name="password" id="password" /><br>
-                        <input type="hidden" name="login" value="true"> <!-- Because  I also use login.php for logout, I tell the script I want to login -->
-                        <input type="submit" name="enter" id="enter" value="Ok" /><br>
+                    <input type="button" onclick="window.location = 'auth.php?start'" value="Login using this domain" /><br>
 
-                        <?php
-
-                            // If the users typed the wrong password, he will get a warning
-                            if(isset($_GET['wrongpass'])) {
-                                ?>
-                                    <p class="red">Password was wrong, try again</p>
-                                <?php
-                            }
-                        ?>
-                    </form>
-
+                    <?php
+                        // If the authentication failed the user will get a warning
+                        if(isset($_GET['auth-failed'])) {
+                            ?>
+                                <p class="red">Authentication failed, try again.</p>
+                            <?php
+                        }
+                    ?>
                 </div>
             </main>
             
