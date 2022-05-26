@@ -5,7 +5,13 @@ require "../../vendor/autoload.php";
 require "../../../utils.php";
 
 if (isset($_SESSION['name']) && $_SESSION['login'] === true) {
-    $tags = explode(",", $_POST["tags"]);
+    $tags = $_POST["tags"];
+    if($tags !== "Add tags") {
+        $tags = explode(",", $tags);
+    } else {
+        $tags = [];
+    }
+    
     $content = quillToMarkdown($_POST["text"]);
 
     $post = newNote($content, $tags);
