@@ -5,23 +5,24 @@ var quill = new Quill("#editor", {
         'toolbar': [
             [{ 'size': [] }],
             [ 'bold', 'italic', 'underline', 'strike' ],
-            [{ 'color': [] }, { 'background': [] }],
+            [ 'image', 'link', 'blockquote', 'code-block',  ],
+            [{ 'align': [] }],
+            [ { 'header': '1' }, { 'header': '2' }],
+            [{ 'list': 'ordered' }, { 'list': 'bullet'}],
             [{ 'script': 'super' }, { 'script': 'sub' }],
-            [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block' ],
-            [{ 'list': 'ordered' }, { 'list': 'bullet'}, { 'indent': '-1' }, { 'indent': '+1' }],
-            [ {'direction': 'rtl'}, { 'align': [] }],
-            [ 'link', 'image', 'video', 'formula' ],
+            
             ['clean']
         ]
     },
     placeholder: "Start typing to add content...",
-    theme: "snow", // or 'bubble'
+    theme: "snow"
 });
 
 function submit_newpost() {
     document.querySelector("#content").value = JSON.stringify(quill.getContents());
-    document.querySelector("#title").value = document.querySelector(".title").innerHTML;
-    document.querySelector("#tags").value = document.querySelector(".tags").innerHTML;
+    // Note posts do not have a title
+    // document.querySelector("#title").value = document.querySelector(".title").innerHTML;
+    document.querySelector("#tags").value = document.querySelector(".tags").value;
 
     document.querySelector(".form").submit();
 }

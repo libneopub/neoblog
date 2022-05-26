@@ -15,8 +15,8 @@
 
     <?php if ($_SESSION['login'] === true) { ?>
         <?php
-            $url = "https://quill.p3k.io/auth/start?me=$site_domain&client_id=https%3A%2F%2Fquill.p3k.io%2F&redirect_uri=https%3A%2F%2Fquill.p3k.io%2Fauth%2Fcallback";
-            header("Location: $url");
+            // $url = "https://quill.p3k.io/auth/start?me=$site_domain&client_id=https%3A%2F%2Fquill.p3k.io%2F&redirect_uri=https%3A%2F%2Fquill.p3k.io%2Fauth%2Fcallback";
+            // header("Location: $url");
         ?>
 
         <?php include "components/sidebar.php"; ?>
@@ -27,8 +27,10 @@
 
             <div class="w3-container">
 
-                <h2 class="title" contenteditable>Enter post title</h2>
-                <p class="tags" contenteditable>Add tags</p>
+                <!-- Note posts do not have a title -->
+                <!-- <h2 class="title" contenteditable>Enter post title</h2> -->
+                <label for="tags" style="display: inline">Tags: </label>
+                <input type="text" name="tags" class="tags" placeholder="Add tags" style="border: 0; margin-left: 0;">
 
             </div>
 
