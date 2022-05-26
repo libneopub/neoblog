@@ -1,0 +1,10 @@
+# Don't accidentally commit neopub source code
+/*
+
+# Include the src directory
+!src
+!.gitignore
+
+# Include README.md and LICENSE
+!README.md
+!LICENSE
