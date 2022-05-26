@@ -1,5 +1,6 @@
 # Don't accidentally commit neopub source code
 /*
+/src/vendor
 
 # Include the src directory
 !src

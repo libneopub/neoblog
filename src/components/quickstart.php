@@ -37,7 +37,7 @@ if(file_exists($file) && filesize($file) > 0){
 
                     <ul class="quickstart-list">
                         <li><a href="settings.php">Update site info</a></li>
-                        <li><a href="pages.php">Add about page</a></li>
+                        <li><a href="posts.php">Write your first post</a></li>
                         <li><a href="themes.php">Download a theme</a></li>
                     </ul>
                 </span>

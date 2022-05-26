@@ -12,12 +12,6 @@
         "in_menu": true
     },
     {
-        "filename": "pages.php",
-        "icon": "fa fa-clone",
-        "name": "Pages",
-        "in_menu": true
-    },
-    {
         "filename": "settings.php",
         "icon": "fa fa-cog fa-fw",
         "name": "Settings",

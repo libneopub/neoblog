@@ -18,15 +18,8 @@ var quill = new Quill("#editor", {
     theme: "snow", // or 'bubble'
 });
 
-function submit_newpage() {
-    document.querySelector("#content").value = quill.root.innerHTML;
-    document.querySelector("#title").value = document.querySelector(".title").innerHTML;
-
-    document.querySelector(".form").submit();
-}
-
 function submit_newpost() {
-    document.querySelector("#content").value = quill.root.innerHTML;
+    document.querySelector("#content").value = JSON.stringify(quill.getContents());
     document.querySelector("#title").value = document.querySelector(".title").innerHTML;
     document.querySelector("#tags").value = document.querySelector(".tags").innerHTML;
 
@@ -34,7 +27,7 @@ function submit_newpost() {
 }
 
 function submit_update() {
-    document.querySelector("#content").value = quill.root.innerHTML;
+    document.querySelector("#content").value = JSON.stringify(quill.getContents());
 
     document.querySelector(".form").submit();
 }

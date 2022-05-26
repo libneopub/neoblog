@@ -58,19 +58,22 @@
 
                 <form action="scripts/update/config.php" method="post">
                     <label for="title">Site title</label>
-                    <input name="title" type="text" value="<?= $site_title ?>">
+                    <input name="title" type="text" autocomplete="off" value="<?= $site_title ?>">
 
                     <label for="description">Description</label>
-                    <textarea name="description"><?= $site_description ?></textarea>
+                    <textarea name="description" autocomplete="off"><?= $site_description ?></textarea>
 
                     <label for="lang">Site language</label>
                     <select id="langlist" name="language"></select>
 
                     <label for="author">Author</label>
-                    <input name="author" type="text" value="<?= $site_author ?>">
+                    <input name="author" type="text" autocomplete="off" value="<?= $site_author ?>">
 
                     <label for="domain">Domain name</label>
-                    <input name="domain" type="text" value="<?= $site_domain ?>">
+                    <input name="domain" type="text" autocomplete="off" value="<?= $site_domain ?>">
+
+                    <label for="profile_picture">Profile image URL</label>
+                    <input name="profile_picture" type="text" autocomplete="off" value="<?= $site_author_profile_picture ?>">
 
                     <br><br>
 

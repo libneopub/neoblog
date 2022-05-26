@@ -4,6 +4,7 @@
 <head>
     <?php
     include "components/module-head.php";
+    require "../utils.php";
     ?>
 
     <?php $pagename = basename(__FILE__); ?>
@@ -16,8 +17,6 @@
         <?php include "components/sidebar.php"; ?>
 
         <div class="w3-main module-content">
-
-
 
             <?php include "components/module-header.php" ?>
 
@@ -40,28 +39,24 @@
 
                 <ul>
                     <?php
-                    $file = "../content/blog.json";
+                    $file = "../content/$currentYear.json";
 
-                    $postsExist = false;
+                    $posts_exist = false;
 
                     if (file_exists($file) && filesize($file) > 0) {
 
                         $handle = fopen($file, "a+");
                         $contents = fread($handle, filesize($file));
-                        $blogs = json_decode($contents);
+                        $posts = json_decode($contents);
                         fclose($handle);
 
-                        foreach ($blogs as $blog) {
-                            $postsExist = true;
+                        foreach ($posts as $post) {
+                            $posts_exist = true;
 
                     ?>
                             <li>
-                                <a class="w3-left" href="updatepost.php?id=<?php echo $blog->id; ?>">
-                                    <?php echo $blog->title; ?>
-                                </a>
-
-                                <a class="w3-right" href="scripts/deletepost.php?id=<?php echo $blog->id; ?>">
-                                    Delete
+                                <a class="w3-left" href="<?php echo $post->uri; ?>">
+                                    <?php echo $post->date; ?>
                                 </a>
                             </li>
                     <?php
@@ -73,12 +68,10 @@
 
             <!-- Only display last <hr> if there are posts.
                 Othersise it would look weird -->
-            <?php if ($postsExist === true) {
+            <?php if ($posts_exist === true) {
             ?>
                 <hr><?php
                 } ?>
-
-            <!-- End page content -->
         </div>
 
         <script src="components/sidebar.js"></script>

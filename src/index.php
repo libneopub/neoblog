@@ -64,11 +64,7 @@
 
             <hr>
 
-            <!-- Quickstart Guide -->
             <?php include "components/quickstart.php"; ?>
-
-            <!-- Password Prompt -->
-            <?php include "components/password-prompt.php"; ?>
 
             <div class="w3-container">
                 <h2>Welcome</h2>
@@ -81,7 +77,6 @@
 
         <script src="components/sidebar.js"></script>
         <script src="components/quickstart.js"></script>
-        <script src="components/password-prompt.js"></script>
 
     <?php } ?>
 </body>

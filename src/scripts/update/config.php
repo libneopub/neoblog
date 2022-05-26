@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-function change_config_file_settings($file_path, $new_settings)
+function updateConfigFile($file_path, $new_settings)
 {
 
     $old_scope = get_defined_vars();
@@ -26,8 +26,9 @@ if ($_SESSION['login'] == true) {
         "site_author" => $_POST["author"],
         "site_language" => $_POST["language"],
         "site_domain" => $_POST["domain"],
+        "site_author_profile_picture" => $_POST["profile_picture"],
     );
-    change_config_file_settings("../../../config.php", $new_settings);
+    updateConfigFile("../../../config.php", $new_settings);
 
     header("Location: ../../settings.php?success-siteinfo");
 } else {
