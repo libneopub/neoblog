@@ -1,0 +1,62 @@
+[
+    {
+        "filename": "index.php",
+        "icon": "fa fa-users fa-fw",
+        "name": "Overview",
+        "in_menu": true
+    },
+    {
+        "filename": "posts.php",
+        "icon": "fa fa-edit",
+        "name": "Blog",
+        "in_menu": true
+    },
+    {
+        "filename": "pages.php",
+        "icon": "fa fa-clone",
+        "name": "Pages",
+        "in_menu": true
+    },
+    {
+        "filename": "settings.php",
+        "icon": "fa fa-cog fa-fw",
+        "name": "Settings",
+        "in_menu": true
+    },
+    {
+        "filename": "about.php",
+        "icon": "fa fa-info-circle fa-fw",
+        "name": "About",
+        "in_menu": true
+    },
+    {
+        "filename": "changelog.php",
+        "icon": "fa fa-info-circle fa-fw",
+        "name": "About",
+        "in_menu": false
+    },
+    {
+        "filename": "newpage.php",
+        "icon": "fas fa-edit",
+        "name": "New page",
+        "in_menu": false
+    },
+    {
+        "filename": "newpost.php",
+        "icon": "fas fa-edit",
+        "name": "New post",
+        "in_menu": false
+    },
+    {
+        "filename": "page.php",
+        "icon": "fas fa-edit",
+        "name": "Update page",
+        "in_menu": false
+    },
+    {
+        "filename": "post.php",
+        "icon": "fas fa-edit",
+        "name": "Update post",
+        "in_menu": false
+    }
+]
