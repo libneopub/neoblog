@@ -5,7 +5,6 @@ require "../../vendor/autoload.php";
 require "../../../utils.php";
 
 if (isset($_SESSION['name']) && $_SESSION['login'] === true) {
-    $title = $_POST["title"];
     $tags = explode(",", $_POST["tags"]);
     $content = quillToMarkdown($_POST["text"]);
 
@@ -13,7 +12,7 @@ if (isset($_SESSION['name']) && $_SESSION['login'] === true) {
     $url = publishPost($post);
     sendWebmentions($url);
 
-    header("Location: ../../posts.php?success-post");
+    header("Location: $url");
 } else {
     header('Location: ../../index.php');
 }
