@@ -46,9 +46,9 @@ if(file_exists($file) && filesize($file) > 0){
                     <h4>Resources</h4>
 
                     <ul class="quickstart-list">
-                        <li><a href="https://github.com/RobinBoers/SkyLight-Website-Editor">Source</a></li>
-                        <li><a  href="https://github.com/RobinBoers/SkyLight-Website-Editor/wiki">Wiki & Documentation</a></li>
-                        <li><a  href="https://github.com/RobinBoers/SkyLight-Website-Editor/issues">Bugtracker</a></li>
+                        <li><a href="https://github.com/RobinBoers/neoblog">Source</a></li>
+                        <li><a  href="https://indieweb.org/neoblog">Wiki & Documentation</a></li>
+                        <li><a  href="https://github.com/RobinBoers/neoblog/issues">Bugtracker</a></li>
                     </ul>
                 </span>
 
