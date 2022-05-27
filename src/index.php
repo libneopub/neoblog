@@ -42,22 +42,12 @@
                 </div>
                 <div class="w3-quarter">
                     <div class="w3-container w3-green w3-padding-16 w3-card dashboard-section">
-                        <div class="w3-left"><i class="fa fa-clone w3-xxxlarge"></i></div>
-                        <div class="w3-right">
-                            <h3><?php include "analytics/pages.php"; ?></h3>
-                        </div>
-                        <div class="w3-clear"></div>
-                        <h4>Pages</h4>
-                    </div>
-                </div>
-                <div class="w3-quarter">
-                    <div class="w3-container w3-deep-orange w3-padding-16 w3-card dashboard-section">
                         <div class="w3-left"><i class="fas fa-comments w3-xxxlarge"></i></div>
                         <div class="w3-right">
                             <h3><?php include "analytics/comments.php"; ?></h3>
                         </div>
                         <div class="w3-clear"></div>
-                        <h4>Comments</h4>
+                        <h4>Webmentions</h4>
                     </div>
                 </div>
             </div>
@@ -67,7 +57,7 @@
             <?php include "components/quickstart.php"; ?>
 
             <div class="w3-container">
-                <h2>Welcome</h2>
+                <h3>Welcome</h3>
                 <p>
                     Welcome to your new website! This is neoblog, a simple plugin for neopub that provides a minimal and responsive portal for managing your website.
                 </p>

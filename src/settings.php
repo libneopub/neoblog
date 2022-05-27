@@ -54,7 +54,7 @@
 
             <div class="w3-container settings">
 
-                <h5 id="general"><b><i class="fas fa-users-cog"></i> General</b></h5>
+                <h3 id="general"><b><i class="fas fa-users-cog"></i> General</b></h3>
 
                 <form action="scripts/update/config.php" method="post">
                     <label for="title">Site title</label>
@@ -82,9 +82,9 @@
 
                 <hr>
 
-                <h5 id="logo"><b><i class="fa fa-image"></i> Logo & Favicon</b></h5>
+                <h3 id="logo"><b><i class="fa fa-image"></i> Logo & Favicon</b></h3>
 
-                <form class="inline-form" action="scripts/update/favicon.php" method="post" enctype="multipart/form-data" id="ico-form">
+                <form class="inline-form" action="scripts/new/favicon.php" method="post" enctype="multipart/form-data" id="ico-form">
                     <input style="display:none" accept="image/x-icon image/vnd.microsoft.icon" required type="file" name="upload" id="ico-upload">
 
                     <input type="button" onclick="uploadFavicon()" value="Upload favicon">
@@ -92,7 +92,7 @@
 
                 <hr>
 
-                <h5 id="custom-css"><b><i class="fa fa-paint-brush"></i> Custom CSS Styling</b></h5>
+                <h3 id="custom-css"><b><i class="fa fa-paint-brush"></i> Custom CSS Styling</b></h3>
 
                 <form action="scripts/update/custom-css.php" method="post" enctype="multipart/form-data">
                     <textarea name="css" class="code"><?php if (file_get_contents("../assets/main.css")) {

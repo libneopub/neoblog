@@ -1,6 +1,56 @@
-.main {
-    margin: auto;
+/* General */
+
+:root {
+    --primary: #35df9c;
+    --primary-dark: #159461;
+    --primary-alt: #19a56d;
 }
+
+html,
+body {
+    height: 100%;
+}
+
+html {
+    box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+p {
+    max-width: 700px;
+}
+
+/* Links */
+
+a {
+    font-weight: bold;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none !important;
+}
+
+.w3-button:hover {
+    text-decoration: none !important;
+}
+.editor-nav a:hover {
+    text-decoration: none !important;
+}
+
+/* Analitics */
+
+.count {
+    font-size: 35px;
+    line-height: 0;
+}
+
+/* Images */
 
 .profile-picture {
     width: 46px;
@@ -9,43 +59,40 @@
     object-fit: cover;
 }
 
-body {
-    background: none !important;
-}
-
-p {
-    max-width: 700px;
-}
-
-:root {
-    --primary: #35df9c;
-    --primary-dark: #159461;
-    --primary-alt: #19a56d;
-}
-
-a {
-    font-weight: bold;
-    color: var(--primary);
-    text-decoration: none;
-}
-
-/* Create Blueprint
-* {
-    background-color: royalblue;
-    border: 1px solid white;
-}
-*/
+/* Modules */
 
 .module-content {
     margin-left: 300px;
+}
+
+@media screen and (min-width: 900px) {
+    .module-content > *:not(hr) {
+        margin-left: 20px;
+    }
 }
 
 .module-header {
     padding-top: 22px;
 }
 
-.active {
-    background-color: #4caf50;
+.module-header h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.module-content h3 {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+ul {
+    padding-left: 13px;
+}
+
+/* Layout */
+
+.w3-sidebar {
+    height: 100%;
 }
 
 .login-main {
@@ -81,26 +128,7 @@ a {
     flex: none;
 }
 
-html,
-body,
-:root {
-    height: 100% !important;
-}
-
-.w3-button:hover {
-    text-decoration: none !important;
-}
-.editor-nav a:hover {
-    text-decoration: none !important;
-}
-
-.w3-sidebar {
-    height: 100%;
-}
-
-a:hover {
-    text-decoration: none !important;
-}
+/* Forms */
 
 textarea {
     border-style: solid;
@@ -111,6 +139,8 @@ label {
     display: block;
     margin: 3px;
     margin-top: 10px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .inline-form,
@@ -118,15 +148,58 @@ label {
     display: inline;
 }
 
-.settings hr {
-    margin-top: 40px !important;
-    margin-bottom: 40px !important;
+textarea {
+    width: 70%;
+    height: 100px;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 10px;
+    resize: none;
 }
 
-.settings,
-.settings h5 {
-    margin: 10px 0 25px !important;
+textarea.code {
+    height: 800px;
+    font-family: "DejaVu LGC Sans Code", "DejaVu Sans Mono", "Fira Code", "Source Code Pro", "Courier New", Courier, monospace;
 }
+
+input[type="button" i],
+input[type="submit" i],
+input[type="reset" i],
+input[type="file" i]::-webkit-file-upload-button,
+button,
+select {
+    border-style: solid;
+    border-image: initial;
+    border-radius: 6px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 40px;
+    border-width: 0;
+}
+
+input[type="text" i],
+input[type="tel" i],
+input[type="email" i],
+input[type="password" i],
+select {
+    border-style: solid;
+    border-image: initial;
+    border-radius: 10px;
+    border-width: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 3px;
+    height: 40px;
+}
+
+:focus,
+input[type="file" i]::-webkit-file-upload-button,
+input,
+button {
+    outline: none !important;
+}
+
+/* Quickstart */
 
 .quickstart-list a {
     color: darkslategray;
@@ -147,13 +220,12 @@ label {
     color: white !important;
 }
 
-.quickstart h3,
-.password-prompt h3 {
+.quickstart h3 {
     margin-bottom: 0 !important;
+    font-size: 25px;
 }
 
-.quickstart p,
-.password-prompt p {
+.quickstart p {
     margin-top: 0;
 }
 
@@ -173,222 +245,18 @@ label {
     color: rgb(41, 41, 41);
 }
 
-.dashboard-section {
-    border-radius: 8px;
-}
+/* Quill editor */
 
-/* Min height for Quill editor */
 .editor,
 #editor {
     min-height: 600px;
+    margin-left: 0 !important;
 }
 
 .ql-toolbar,
 .ql-container {
     border-left: none !important;
-}
-
-/* Settings for the textarea in the editor */
-textarea {
-    width: 70%;
-    height: 100px;
-    border-radius: 10px;
-    font-size: 15px;
-    padding: 10px;
-    resize: none;
-}
-
-textarea.code {
-    height: 800px;
-    font-family: "DejaVu LGC Sans Code", "DejaVu Sans Mono", "Fira Code", "Source Code Pro", "Courier New", Courier, monospace;
-}
-
-/* Buttons */
-
-input[type="button" i],
-input[type="submit" i],
-input[type="reset" i],
-input[type="file" i]::-webkit-file-upload-button,
-button,
-select {
-    border-style: solid;
-    border-image: initial;
-    border-radius: 6px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 40px;
-    border-width: 0;
-}
-
-/* Inputs */
-
-input[type="text" i],
-input[type="tel" i],
-input[type="email" i],
-input[type="password" i],
-select {
-    border-style: solid;
-    border-image: initial;
-    border-radius: 10px;
-    border-width: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 3px;
-    height: 40px;
-}
-
-/* Make submit buttons block */
-/*input[type="submit" i] {
-    display: block;
-    margin-top: 10px
-}*/
-
-:focus,
-input[type="file" i]::-webkit-file-upload-button,
-input,
-button {
-    outline: none !important;
-}
-
-/* Range input */
-
-input[type="range"] {
-    -webkit-appearance: none;
-    width: 100%;
-    background: transparent;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-}
-
-input[type="range"]:focus {
-    outline: none;
-}
-
-input[type="range"]::-ms-track {
-    width: 100%;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-}
-
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    border: 1px solid #000000;
-    height: 36px;
-    width: 16px;
-    border-radius: 3px;
-    background: #ffffff;
-    cursor: pointer;
-    margin-top: -14px;
-    box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
-}
-
-input[type="range"]::-moz-range-thumb {
-    box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
-    border: 1px solid #000000;
-    height: 36px;
-    width: 16px;
-    border-radius: 3px;
-    background: #ffffff;
-    cursor: pointer;
-}
-
-input[type="range"]::-ms-thumb {
-    box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
-    border: 1px solid #000000;
-    height: 36px;
-    width: 16px;
-    border-radius: 3px;
-    background: #ffffff;
-    cursor: pointer;
-}
-
-input[type="range"]::-webkit-slider-runnable-track {
-    width: 100%;
-    height: 12.8px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-    background: deepskyblue;
-    border-radius: 25px;
-    border: 0 solid #000101;
-}
-input[type="range"]::-webkit-slider-thumb {
-    box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-    border: 0 solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: white;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -3.6px;
-}
-input[type="range"]:focus::-webkit-slider-runnable-track {
-    background: deepskyblue;
-}
-input[type="range"]::-moz-range-track {
-    width: 100%;
-    height: 12.8px;
-    cursor: pointer;
-    animate: 0.2s;
-    box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-    background: deepskyblue;
-    border-radius: 25px;
-    border: 0 solid #000101;
-}
-input[type="range"]::-moz-range-thumb {
-    box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-    border: 0 solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: white;
-    cursor: pointer;
-}
-input[type="range"]::-ms-track {
-    width: 100%;
-    height: 12.8px;
-    cursor: pointer;
-    animate: 0.2s;
-    background: transparent;
-    border-color: transparent;
-    border-width: 39px 0;
-    color: transparent;
-}
-input[type="range"]::-ms-fill-lower {
-    background: deepskyblue;
-    border: 0 solid #000101;
-    border-radius: 50px;
-    box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-}
-input[type="range"]::-ms-fill-upper {
-    background: greeb;
-    border: 0 solid #000101;
-    border-radius: 50px;
-    box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-}
-input[type="range"]::-ms-thumb {
-    box-shadow: 0 0 0 #000000, 0 0 0 #0d0d0d;
-    border: 0 solid #000000;
-    height: 20px;
-    width: 39px;
-    border-radius: 7px;
-    background: deepskyblue;
-    cursor: pointer;
-}
-input[type="range"]:focus::-ms-fill-lower {
-    background: deepskyblue;
-}
-input[type="range"]:focus::-ms-fill-upper {
-    background: deepskyblue;
-}
-
-.editor-nav a:hover {
-    text-decoration: none !important;
+    margin-left: 0 !important;
 }
 
 /* Themes page */
@@ -412,4 +280,15 @@ input[type="range"]:focus::-ms-fill-upper {
     .themes .module-header {
         padding-top: 0;
     }
+}
+
+/* Misc */
+
+.settings hr {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+}
+
+. .dashboard-section {
+    border-radius: 8px;
 }

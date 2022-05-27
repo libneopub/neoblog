@@ -15,7 +15,7 @@ foreach ($modules as $module) {
 
 ?>
         <header class="w3-container module-header">
-            <h4><b><i class="<?php echo $module->icon; ?>"></i> <?php echo $module->name; ?></b></h4>
+            <h2><b><i class="<?php echo $module->icon; ?>"></i> <?php echo $module->name; ?></b></h2>
         </header>
 <?php
 

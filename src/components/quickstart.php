@@ -12,43 +12,42 @@ if (file_exists($file) && filesize($file) > 0) {
     // the quickstart guide should be rendered
     if ($contents !== "closed") {
 ?>
+        <div>
+            <div class="w3-container w3-padding w3-margin w3-light-gray w3-card quickstart">
+                <a class="close" onclick="ignore()">&times;</a>
 
-        <div class="w3-container w3-padding w3-margin w3-light-gray w3-card quickstart">
+                <h3><b>Quickstart</b></h3>
+                <p>Here's some friendly suggestions on what to do next.</p>
 
-            <a class="close" onclick="ignore()">&times;</a>
+                <span class="w3-quarter">
+                    <h4>Get started</h4>
+                    <button onclick="newPost()" class="w3-button w3-container new-post">Compose new blogpost</button>
+                </span>
 
-            <h3><b>Quickstart</b></h3>
-            <p>Here's some friendly suggestions on what to do next.</p>
+                <span class="w3-quarter">
+                    <h4>Customize</h4>
 
-            <span class="w3-quarter">
-                <h4>Get started</h4>
-                <button onclick="newPost()" class="w3-button w3-container new-post">Compose new blogpost</button>
-            </span>
+                    <ul class="quickstart-list">
+                        <li><a href="settings.php">Update site info</a></li>
+                        <li><a href="posts.php">Write your first post</a></li>
+                        <li><a href="themes.php">Download a theme</a></li>
+                    </ul>
+                </span>
 
-            <span class="w3-quarter">
-                <h4>Customize</h4>
+                <span class="w3-quarter">
+                    <h4>Resources</h4>
 
-                <ul class="quickstart-list">
-                    <li><a href="settings.php">Update site info</a></li>
-                    <li><a href="posts.php">Write your first post</a></li>
-                    <li><a href="themes.php">Download a theme</a></li>
-                </ul>
-            </span>
+                    <ul class="quickstart-list">
+                        <li><a href="https://github.com/RobinBoers/neoblog">Source</a></li>
+                        <li><a href="https://indieweb.org/neoblog">Wiki & Documentation</a></li>
+                        <li><a href="https://github.com/RobinBoers/neoblog/issues">Bugtracker</a></li>
+                    </ul>
+                </span>
 
-            <span class="w3-quarter">
-                <h4>Resources</h4>
+            </div>
 
-                <ul class="quickstart-list">
-                    <li><a href="https://github.com/RobinBoers/neoblog">Source</a></li>
-                    <li><a href="https://indieweb.org/neoblog">Wiki & Documentation</a></li>
-                    <li><a href="https://github.com/RobinBoers/neoblog/issues">Bugtracker</a></li>
-                </ul>
-            </span>
-
+            <hr>
         </div>
-
-        <hr>
-
 <?php
 
     }

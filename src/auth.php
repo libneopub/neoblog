@@ -2,13 +2,13 @@
 session_start();
 require "../config.php";
 
-$callback_uri = "$current_domain/src/auth.php";
+$callback_uri = "$site_url/src/auth.php";
 
 if (beginAuthentication()) {
     $state = uniqid();
     $_SESSION["state"] = $state;
 
-    $url = "https://indieauth.com/auth?me=$site_domain&client_id=$current_domain/&redirect_uri=$callback_uri&state=$state";
+    $url = "https://indieauth.com/auth?me=$site_domain&client_id=$site_url/&redirect_uri=$callback_uri&state=$state";
 
     header("Location: $url");
 }
@@ -18,7 +18,7 @@ if (isAuthenticating()) {
         $code = $_GET['code'];        
 
         $url = "https://indieauth.com/auth";
-        $params = "code=$code&client_id=$current_domain/&redirect_uri=$callback_uri";
+        $params = "code=$code&client_id=$site_url/&redirect_uri=$callback_uri";
         $headers = array(
             'Content-Type: application/x-www-form-urlencoded;charset=UTF-8',
             'Accept: application/json'

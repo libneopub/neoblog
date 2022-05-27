@@ -39,7 +39,7 @@
 
                 <ul>
                     <?php
-                    $file = "../content/$currentYear.json";
+                    $file = "../content/$current_year.json";
 
                     $posts_exist = false;
 
