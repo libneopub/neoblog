@@ -60,28 +60,35 @@
                     <label for="title">Site title</label>
                     <input name="title" type="text" autocomplete="off" value="<?= $site_title ?>">
 
+                    <label for="author">Author</label>
+                    <input name="author" type="text" autocomplete="off" value="<?= $site_author ?>">
+
                     <label for="description">Description</label>
                     <textarea name="description" autocomplete="off"><?= $site_description ?></textarea>
 
                     <label for="lang">Site language</label>
                     <select id="langlist" name="language"></select>
 
-                    <label for="author">Author</label>
-                    <input name="author" type="text" autocomplete="off" value="<?= $site_author ?>">
+                    <label for="url">Domain name</label>
+                    <input name="url" type="text" autocomplete="off" value="<?= $site_url ?>">
 
-                    <label for="domain">Domain name</label>
+                    <label for="domain">Auth domain</label>
                     <input name="domain" type="text" autocomplete="off" value="<?= $site_domain ?>">
 
-                    <label for="profile_picture">Profile image URL</label>
-                    <input name="profile_picture" type="text" autocomplete="off" value="<?= $site_author_profile_picture ?>">
+                    <label for=" profile_picture">Profile image URL</label>
+                    <input name="profile_picture" type="text" autocomplete="off" value="<?= $site_author_profile_picture ?>" oninput="updateProfilePicturePreview(this)">
+
+                    <img src="<?= $site_author_profile_picture ?>" class="preview profile-picture" alt="Profile picture" style="border-radius: 10px; height: 40px; width: 40px;">
 
                     <br><br>
 
                     <input name="enter" type="submit" value="Save">
                 </form>
+            </div>
 
-                <hr>
+            <hr>
 
+            <div class="w3-container settings">
                 <h3 id="logo"><b><i class="fa fa-image"></i> Logo & Favicon</b></h3>
 
                 <form class="inline-form" action="scripts/new/favicon.php" method="post" enctype="multipart/form-data" id="ico-form">
@@ -89,9 +96,11 @@
 
                     <input type="button" onclick="uploadFavicon()" value="Upload favicon">
                 </form>
+            </div>
 
-                <hr>
+            <hr>
 
+            <div class="w3-container settings">
                 <h3 id="custom-css"><b><i class="fa fa-paint-brush"></i> Custom CSS Styling</b></h3>
 
                 <form action="scripts/update/custom-css.php" method="post" enctype="multipart/form-data">

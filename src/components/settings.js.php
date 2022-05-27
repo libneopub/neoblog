@@ -13,6 +13,10 @@ function uploadFavicon() {
     });
 }
 
+function updateProfilePicturePreview(input) {
+    document.querySelector(".profile-picture.preview").src = input.value;
+}
+
 // List of locales
 const languages = {
     af: "Afrikaans",

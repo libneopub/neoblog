@@ -11,6 +11,7 @@ $new_settings = array(
     "site_author" => $_POST["author"],
     "site_language" => $_POST["language"],
     "site_domain" => $_POST["domain"],
+    "site_url" => $_POST["url"],
     "site_author_profile_picture" => $_POST["profile_picture"],
 );
 updateConfigFile("../../../config.php", $new_settings);
