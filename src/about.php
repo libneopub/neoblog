@@ -23,10 +23,16 @@
                 <p>
                     Neoblog is the succesor to SkyLight. It is an open-source blogging system designed with the IndieWeb in mind. It builts upon the strong foundation of neopub, my microblogging platform. It acts as a simple GUI for posting content.
                 </p>
-
+                <?php
+                $neoblog_version = file_get_contents('version.txt', true);
+                $neopub_version = file_get_contents('../version.txt', true);
+                ?>
+                <p>
+                    <strong>Version:</strong> <?= $neoblog_version ?><br>
+                    <strong>SkyLight backend:</strong> v0.04.1-preview<br>
+                    <strong>Neopub version:</strong> <?= $neopub_version ?><br>
+                </p>
             </div>
-
-            <!-- End page content -->
         </div>
 
         <script src="components/sidebar.js"></script>
