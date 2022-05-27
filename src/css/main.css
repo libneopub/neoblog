@@ -68,7 +68,7 @@ a:hover {
 }
 
 @media screen and (min-width: 993px) {
-    .module-content > *:not(hr) {
+    .module-content > :not(hr) {
         margin-left: 10px;
     }
 }
