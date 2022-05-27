@@ -5,6 +5,7 @@
 # Include the src directory
 !src
 !.gitignore
+!.git
 
 # Include README.md and LICENSE
 !README.md
