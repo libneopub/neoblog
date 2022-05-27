@@ -1,6 +1,6 @@
 # neoblog
 
-![Latest release](https://img.shields.io/github/v/release/RobinBoers/neoblog?include_prereleases) ![Small file size](https://img.shields.io/github/repo-size/RobinBoers/neoblog?label=size) ![license](https://img.shields.io/github/license/RobinBoers/neoblog)
+![Latest release](https://img.shields.io/github/v/release/neologged/neoblog?include_prereleases) ![Small file size](https://img.shields.io/github/repo-size/neologged/neoblog?label=size) ![license](https://img.shields.io/github/license/neologged/neoblog)
 
 Neoblog, a simple plugin for neopub that provides a minimal and responsive portal for managing your website.
 
