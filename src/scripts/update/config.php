@@ -1,5 +1,21 @@
 <?php
-session_start();
+// Script to update config file.
+
+require "../../functions/auth.php";
+
+redirectIfNotLoggedIn();
+
+$new_settings = array(
+    "site_title" => $_POST["title"],
+    "site_description" => $_POST["description"],
+    "site_author" => $_POST["author"],
+    "site_language" => $_POST["language"],
+    "site_domain" => $_POST["domain"],
+    "site_author_profile_picture" => $_POST["profile_picture"],
+);
+updateConfigFile("../../../config.php", $new_settings);
+
+header("Location: ../../settings.php?success-siteinfo");
 
 function updateConfigFile($file_path, $new_settings)
 {
@@ -17,20 +33,4 @@ function updateConfigFile($file_path, $new_settings)
     }
 
     file_put_contents($file_path, $new_file_content);
-}
-
-if ($_SESSION['login'] == true) {
-    $new_settings = array(
-        "site_title" => $_POST["title"],
-        "site_description" => $_POST["description"],
-        "site_author" => $_POST["author"],
-        "site_language" => $_POST["language"],
-        "site_domain" => $_POST["domain"],
-        "site_author_profile_picture" => $_POST["profile_picture"],
-    );
-    updateConfigFile("../../../config.php", $new_settings);
-
-    header("Location: ../../settings.php?success-siteinfo");
-} else {
-    header('Location: ../../index.php');
 }

@@ -1,5 +1,9 @@
-<?php 
-function deleteDirectory($dir) {
+<?php
+// Function to delete an entire
+// directory recursively.
+
+function deleteDirectory($dir)
+{
     if (!file_exists($dir)) {
         return true;
     }
@@ -16,9 +20,7 @@ function deleteDirectory($dir) {
         if (!deleteDirectory($dir . DIRECTORY_SEPARATOR . $item)) {
             return false;
         }
-
     }
 
     return rmdir($dir);
 }
-?>

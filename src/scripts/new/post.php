@@ -1,29 +1,29 @@
 <?php
-session_start();
+// Script to publish a new post from the editor.
 
 require "../../vendor/autoload.php";
 require "../../../utils.php";
+require "../../functions/auth.php";
 
-if (isset($_SESSION['name']) && $_SESSION['login'] === true) {
-    $tags = $_POST["tags"];
-    if($tags !== "Add tags") {
-        $tags = explode(",", $tags);
-    } else {
-        $tags = [];
-    }
-    
-    $content = quillToMarkdown($_POST["text"]);
+redirectIfNotLoggedIn();
 
-    $post = newNote($content, $tags);
-    $url = publishPost($post);
-    sendWebmentions($url);
-
-    header("Location: $url");
+$tags = $_POST["tags"];
+if ($tags !== "Add tags") {
+    $tags = explode(",", $tags);
 } else {
-    header('Location: ../../index.php');
+    $tags = [];
 }
 
-function quillToMarkdown($input_json) {
+$content = quillToMarkdown($_POST["text"]);
+
+$post = newNote($content, $tags);
+$url = publishPost($post);
+sendWebmentions($url);
+
+header("Location: $url");
+
+function quillToMarkdown($input_json)
+{
     $parser = new DBlackborough\Quill\Parser\Markdown();
     $renderer = new DBlackborough\Quill\Renderer\Markdown();
 

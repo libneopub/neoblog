@@ -1,4 +1,5 @@
-// Initialize Quill editor
+// JS to render the quill editor and handle
+// form submission.
 
 var quill = new Quill("#editor", {
     modules: {
@@ -18,17 +19,11 @@ var quill = new Quill("#editor", {
     theme: "snow"
 });
 
-function submit_newpost() {
+function submit() {
     document.querySelector("#content").value = JSON.stringify(quill.getContents());
     // Note posts do not have a title
     // document.querySelector("#title").value = document.querySelector(".title").innerHTML;
     document.querySelector("#tags").value = document.querySelector(".tags").value;
-
-    document.querySelector(".form").submit();
-}
-
-function submit_update() {
-    document.querySelector("#content").value = JSON.stringify(quill.getContents());
 
     document.querySelector(".form").submit();
 }

@@ -82,26 +82,12 @@
 
                 <hr>
 
-                <h5 id="security"><b><i class="fa fa-lock"></i> Security</b></h5>
-
-                <form action="scripts/update/password.php" method="post">
-                    <label for="confirm_password">Old password</label>
-                    <input name="confirm_password" type="password" placeholder="Type old password..."><br>
-
-                    <label for="new_password">New password</label>
-                    <input name="new_password" type="password" placeholder="Type new password...">
-
-                    <input name="changepass" type="submit" value="Save">
-                </form>
-
-                <hr>
-
                 <h5 id="logo"><b><i class="fa fa-image"></i> Logo & Favicon</b></h5>
 
-                <form class="inline-form" action="scripts/upload/favicon.php" method="post" enctype="multipart/form-data" id="ico-form">
+                <form class="inline-form" action="scripts/update/favicon.php" method="post" enctype="multipart/form-data" id="ico-form">
                     <input style="display:none" accept="image/x-icon image/vnd.microsoft.icon" required type="file" name="upload" id="ico-upload">
 
-                    <input type="button" onclick="uploadFile('ico')" value="Upload favicon">
+                    <input type="button" onclick="uploadFavicon()" value="Upload favicon">
                 </form>
 
                 <hr>
@@ -110,8 +96,8 @@
 
                 <form action="scripts/update/custom-css.php" method="post" enctype="multipart/form-data">
                     <textarea name="css" class="code"><?php if (file_get_contents("../assets/main.css")) {
-                                                echo file_get_contents("../assets/main.css");
-                                            } ?></textarea><br>
+                                                            echo file_get_contents("../assets/main.css");
+                                                        } ?></textarea><br>
 
                     <input type="submit" value="Save" name="submit"><br>
                 </form>

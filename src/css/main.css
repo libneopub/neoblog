@@ -2,6 +2,13 @@
     margin: auto;
 }
 
+.profile-picture {
+    width: 46px;
+    aspect-ratio: 1/1;
+    height: auto;
+    object-fit: cover;
+}
+
 body {
     background: none !important;
 }
@@ -11,15 +18,14 @@ p {
 }
 
 :root {
-    --color-one: #35df9c;
-    /*  --color-two: #1ebf7f; */
-    --color-three: #159461;
-    --color-four: #19a56d;
+    --primary: #35df9c;
+    --primary-dark: #159461;
+    --primary-alt: #19a56d;
 }
 
 a {
     font-weight: bold;
-    color: var(--color-one);
+    color: var(--primary);
     text-decoration: none;
 }
 
@@ -132,12 +138,12 @@ label {
 }
 
 .new-post {
-    background-color: var(--color-three);
+    background-color: var(--primary-dark);
     color: white;
 }
 
 .new-post:hover {
-    background-color: var(--color-four) !important;
+    background-color: var(--primary-alt) !important;
     color: white !important;
 }
 
@@ -194,7 +200,7 @@ textarea {
 
 textarea.code {
     height: 800px;
-    font-family: 'DejaVu LGC Sans Code', 'DejaVu Sans Mono', 'Fira Code', 'Source Code Pro', 'Courier New', Courier, monospace;
+    font-family: "DejaVu LGC Sans Code", "DejaVu Sans Mono", "Fira Code", "Source Code Pro", "Courier New", Courier, monospace;
 }
 
 /* Buttons */

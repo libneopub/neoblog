@@ -1,44 +1,38 @@
 <?php
-session_start();
+// Script to upload a favicon
 
-if (isset($_SESSION['name']) && $_SESSION['login'] === true) {
+require "../../functions/auth.php";
 
-    $new_file_name = "favicon.ico";
+redirectIfNotLoggedIn();
 
-    $target_dir = "../../../";
-    $target_file = $target_dir . $new_file_name;
+$new_file_name = "favicon.ico";
+$tmp_file_path = $_FILES["upload"]["tmp_name"];
+$target_dir = "../../../assets/icons/";
+$target_file = $target_dir . $new_file_name;
 
-    $upload_failed = false;
+checkIfFileIsImageAndRedirectIfNot($tmp_file_path);
+deleteFileIsItExists($target_file);
 
-    if (isset($_FILES["upload"])) {
-
-        $check = getimagesize($_FILES["upload"]["tmp_name"]);
-
-        if ($check === false) {
-            $error == "<br>Error: the uploaded file wasn't a image.<br>";
-            $upload_failed = true;
-        }
-    }
-
-    if ($check["mime"] !== "image/x-icon" && $check["mime"] !== "image/vnd.microsoft.icon") {
-        $error == "<br>Error: the image file you selected wasn't a valid favicon file.<br>";
-        $upload_failed = true;
-    }
-
-    // Check if file already exists, remove it
-    if (file_exists($target_file)) {
-        unlink($target_file);
-    }
-
-    if ($upload_failed == true) {
-        header("Location: ../../settings.php?error-ico-upload");
-    } else {
-        if (move_uploaded_file($_FILES["upload"]["tmp_name"], $target_file)) {
-            header("Location: ../../settings.php?success-ico-upload");
-        } else {
-            header("Location: ../../settings.php?error-ico-upload");
-        }
-    }
+if (move_uploaded_file($tmp_file_path, $target_file)) {
+    header("Location: ../../settings.php?success-ico-upload");
 } else {
-    header('Location: ../../index.php');
+    header("Location: ../../settings.php?error-ico-upload");
+}
+
+function deleteFileIsItExists($file)
+{
+    if (file_exists($file)) {
+        unlink($file);
+    }
+}
+
+function checkIfFileIsImageAndRedirectIfNot($file)
+{
+    $check = getimagesize($file);
+    $mime = $check["mime"];
+
+    if ($check === false || ($mime !== "image/x-icon" && $mime !== "image/vnd.microsoft.icon")) {
+        header("Location: ../../settings.php?error-ico-upload");
+        exit;
+    }
 }

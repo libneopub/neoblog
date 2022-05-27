@@ -1,14 +1,14 @@
 <?php
-session_start();
+// Script to edit main css file.
 
-if (isset($_SESSION['name']) && $_SESSION['login'] === true) {
-    if (isset($_POST['css'])) {
-        $fp = fopen("../../../assets/main.css", 'w+');
-        fwrite($fp, $_POST['css']);
-        fclose($fp);
+require "../../functions/auth.php";
 
-        header('Location: ../../settings.php?success-css');
-    }
-} else {
-    header('Location: ../../index.php');
+redirectIfNotLoggedIn();
+
+if (isset($_POST['css'])) {
+    $fp = fopen("../../../assets/main.css", 'w+');
+    fwrite($fp, $_POST['css']);
+    fclose($fp);
+
+    header('Location: ../../settings.php?success-css');
 }

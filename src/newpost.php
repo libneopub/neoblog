@@ -15,8 +15,8 @@
 
     <?php if ($_SESSION['login'] === true) { ?>
         <?php
-            // $url = "https://quill.p3k.io/auth/start?me=$site_domain&client_id=https%3A%2F%2Fquill.p3k.io%2F&redirect_uri=https%3A%2F%2Fquill.p3k.io%2Fauth%2Fcallback";
-            // header("Location: $url");
+        // $url = "https://quill.p3k.io/auth/start?me=$site_domain&client_id=https%3A%2F%2Fquill.p3k.io%2F&redirect_uri=https%3A%2F%2Fquill.p3k.io%2Fauth%2Fcallback";
+        // header("Location: $url");
         ?>
 
         <?php include "components/sidebar.php"; ?>
@@ -34,22 +34,12 @@
 
             </div>
 
-            <!-- Include stylesheet for Quill -->
-            <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
-            <!-- Create the editor container for Quill -->
-            <div id="editor">
-
-            </div>
-
-            <!-- Include the Quill library -->
-            <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+            <?php include "components/quill.php"; ?>
 
             <div class="w3-container"><br>
-
-                <button onclick="submit_newpost()">Post</button>
-
+                <button onclick="submit()">Post</button>
             </div>
+
             <hr>
 
             <form style="display:none !important;" class="form" action="scripts/new/post.php" method="post">

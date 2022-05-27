@@ -1,29 +1,19 @@
 <?php
+// Handles components in the settings panel
 
 header("Content-Type: application/javascript; charset='utf-8'");
 include "../../config.php";
-
 ?>
 
-function uploadFile(type) {
-    if (type == "logo") {
-        document.getElementById("logo-upload").click();
-        document.getElementById("logo-upload").addEventListener("change", (e) => {
-            document.getElementById("logo-form").submit();
-        });
-    } else if (type == "ico") {
-        document.getElementById("ico-upload").click();
-        document.getElementById("ico-upload").addEventListener("change", (e) => {
-            document.getElementById("ico-form").submit();
-        });
-    } else if (type == "data") {
-        document.getElementById("data-upload").click();
-        document.getElementById("data-upload").addEventListener("change", (e) => {
-            document.getElementById("data-form").submit();
-        });
-    }
+// Handles uploading favicons
+function uploadFavicon() {
+    document.getElementById("ico-upload").click();
+    document.getElementById("ico-upload").addEventListener("change", (e) => {
+        document.getElementById("ico-form").submit();
+    });
 }
 
+// List of locales
 const languages = {
     af: "Afrikaans",
     af_NA: "Afrikaans (Namibia)",
@@ -590,9 +580,11 @@ const languages = {
     zu_ZA: "Zulu (South Africa)",
 };
 
+// Get current locale from site config
 currentLang = "<?= $site_language ?>";
-console.log(currentLang);
 
+// Generate select input with all locales
+// and select the current one.
 function generateList(element, values) {
     const keys = Object.keys(values);
 
@@ -612,4 +604,7 @@ function generateList(element, values) {
     });
 }
 
-window.onload = generateList(document.getElementById("langlist"), languages);
+window.onload = () => {
+    let selectElement = document.getElementById("langlist");
+    generateList(selectElement, languages)
+};

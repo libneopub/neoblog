@@ -1,11 +1,12 @@
 <?php
-session_start();
+// Script to hide quickstart box.
 
-if (isset($_SESSION['name']) && $_SESSION['login'] === true) {
+require "../functions/auth.php";
 
-    $fp = fopen("../quickstart.txt", 'w+');
-    fwrite($fp, "done");
-    fclose($fp);
+redirectIfNotLoggedIn();
 
-    header("Location: ../index.php");
-}
+$fp = fopen("../quickstart.txt", 'w+');
+fwrite($fp, "closed");
+fclose($fp);
+
+header("Location: ../index.php");
