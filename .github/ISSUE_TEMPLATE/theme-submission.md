@@ -8,7 +8,7 @@ assignees: RobinBoers
 ---
 
 **Name of the theme**
-The name displayed in the themes panel
+The name displayed in the themes panel.
 
 **License?**
 What license does your theme have?
@@ -17,5 +17,5 @@ What license does your theme have?
 This is the CSS to put in `/assets/main.css`.
 
 ```
-insert main.css here
+Put the contents of main.css here or insert a link to an external file.
 ```
