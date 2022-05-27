@@ -59,7 +59,15 @@
             <div class="w3-container">
                 <h3>Welcome</h3>
                 <p>
-                    Welcome to your new website! This is neoblog, a simple plugin for neopub that provides a minimal and responsive portal for managing your website.
+                    Neoblog, a simple plugin for neopub that provides a minimal and responsive portal for managing your website.
+                </p>
+                <p>
+                    Neoblog is the succesor to <a href="https://github.com/RobinBoers/SkyLight-Website-Editor">SkyLight</a>. It is an open-source blogging system designed with the IndieWeb in mind. It builts upon the strong foundation of <a href="https://github.com/RobinBoers/neopub">neopub</a>, my microblogging platform. It acts as a simple GUI for posting content.
+                </p>
+                <p>
+                    <img src="https://img.shields.io/github/v/release/RobinBoers/neoblog?include_prereleases" alt="Latest release">
+                    <img src="https://img.shields.io/github/repo-size/RobinBoers/neoblog?label=size" alt="Small file size">
+                    <img src="https://img.shields.io/github/license/RobinBoers/neoblog" alt="License">
                 </p>
             </div>
             <hr>
