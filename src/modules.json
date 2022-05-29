@@ -12,6 +12,12 @@
         "in_menu": true
     },
     {
+        "filename": "themes.php",
+        "icon": "fa fa-paint-brush",
+        "name": "Themes",
+        "in_menu": true
+    },
+    {
         "filename": "settings.php",
         "icon": "fa fa-cog fa-fw",
         "name": "Settings",
@@ -30,21 +36,9 @@
         "in_menu": false
     },
     {
-        "filename": "newpage.php",
-        "icon": "fas fa-edit",
-        "name": "New page",
-        "in_menu": false
-    },
-    {
         "filename": "newpost.php",
         "icon": "fas fa-edit",
         "name": "New post",
-        "in_menu": false
-    },
-    {
-        "filename": "page.php",
-        "icon": "fas fa-edit",
-        "name": "Update page",
         "in_menu": false
     },
     {

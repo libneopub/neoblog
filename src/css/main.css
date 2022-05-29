@@ -4,7 +4,7 @@
     --primary: #35df9c;
     --primary-dark: #159461;
     --primary-alt: #19a56d;
-    --system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    --system: Inter var, Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 html,
@@ -182,6 +182,16 @@ select {
     border-width: 0;
 }
 
+.button-primary {
+    background-color: var(--primary-dark);
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-alt) !important;
+    color: white !important;
+}
+
 input[type="text" i],
 input[type="tel" i],
 input[type="email" i],
@@ -213,16 +223,6 @@ button {
 .quickstart-list a:hover {
     color: rgb(63, 107, 107);
     text-decoration: underline;
-}
-
-.new-post {
-    background-color: var(--primary-dark);
-    color: white;
-}
-
-.new-post:hover {
-    background-color: var(--primary-alt) !important;
-    color: white !important;
 }
 
 .quickstart h3 {
@@ -274,11 +274,31 @@ button {
     padding-right: 0;
 }
 
-.themes .iframe-container {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    padding-right: 0;
+@media screen and (min-width: 993px) {
+    .theme {
+        display: grid;
+        grid-template-columns: 40% 60%;
+        width: 100%;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 993px) {
+    .theme h3,
+    .theme p,
+    .theme button {
+        margin-left: 20px;
+    }
+
+    .theme button {
+        float: right;
+        margin-right: 20px;
+    }
+}
+
+.theme .screenshot {
+    width: 100%;
+    border: 1px solid rgb(224, 224, 224);
 }
 
 @media screen and (max-width: 993px) {

@@ -21,7 +21,7 @@ if (file_exists($file) && filesize($file) > 0) {
 
                 <span class="w3-quarter">
                     <h4>Get started</h4>
-                    <button onclick="newPost()" class="w3-button w3-container new-post">Compose new blogpost</button>
+                    <button onclick="newPost()" class="w3-button w3-container button-primary">Compose new blogpost</button>
                 </span>
 
                 <span class="w3-quarter">

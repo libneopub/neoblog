@@ -52,14 +52,23 @@
 
                         foreach ($posts as $post) {
                             $posts_exist = true;
-
+                            if (isset($post->content)) {
                     ?>
-                            <li>
-                                <a class="w3-left" href="<?php echo $post->uri; ?>">
-                                    <?php echo $post->date; ?>
-                                </a>
-                            </li>
+                                <li>
+                                    <a class="w3-left" href="<?php echo $post->uri; ?>">
+                                        <?php
+                                        $content = stripslashes(strip_tags($post->content));
+
+                                        if (strlen($content) > 100) {
+                                            echo substr($content, 0, 99) . '...';
+                                        } else {
+                                            echo $content;
+                                        }
+                                        ?>
+                                    </a>
+                                </li>
                     <?php
+                            }
                         }
                     }
                     ?>
