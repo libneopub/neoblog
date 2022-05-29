@@ -1,9 +1,9 @@
 # Don't accidentally commit neopub source code
 /*
-/src/vendor
+/dashboard/vendor
 
 # Include the src directory
-!src
+!dashboard
 !.gitignore
 !.git
 
