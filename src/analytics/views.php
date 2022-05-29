@@ -1,1 +1,0 @@
-<span class="count view-count">0</span>
