@@ -6,7 +6,7 @@ function populateThemeList(themes) {
         themeContainer.classList.add("theme");
 
         let screenshot = document.createElement("img");
-        screenshot.src = `https://docs.geheimesite.nl/neopub-themes/${theme.screenshot}`;
+        screenshot.src = `https://neopublished.github.io/themes/${theme.screenshot}`;
         screenshot.classList.add("screenshot");
         themeContainer.appendChild(screenshot);
 
