@@ -36,7 +36,7 @@ function populateThemeList(themes) {
         downloadButton.innerText = "Install this theme";
         downloadButton.classList.add("button-primary");
         downloadButton.onclick = () => {
-            let url = `https://docs.geheimesite.nl/neopub-themes/${theme.url}`;
+            let url = `https://neopublished.github.io/themes/${theme.url}`;
             window.location = `scripts/new/theme.php?url=${encodeURIComponent(url)}`;
         };
 
@@ -49,7 +49,7 @@ function populateThemeList(themes) {
 }
 
 window.onload = () => {
-    fetch("https://neologged.github.io/themes/themes.json")
+    fetch("https://neopublished.github.io/themes/themes.json")
         .then((response) => response.json())
         .then((json) => populateThemeList(json));
 };
